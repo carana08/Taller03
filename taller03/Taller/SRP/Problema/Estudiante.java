@@ -1,8 +1,6 @@
 package Problema;
-
 import java.io.FileWriter;
 import java.io.IOException;
-
 public class Estudiante {
 	private String correo;
 	private int materias;
@@ -10,11 +8,10 @@ public class Estudiante {
 	
 	public void registrar() {
 		if(!correo.contains("@")) {
-			throw new RuntimeException("Email debe contener el '@'");
+			throw new RuntimeException("El correo debe contener el '@'");
 		}
-		if(materias==0) 
-			throw new RuntimeException("Debe estar registrado en al menos 1 clase");
-			
+		if(materias<=0 || materias>15) 
+			throw new RuntimeException("El estudiante no es regular");	
 		FileWriter file; 
 	
 	try {
@@ -26,14 +23,14 @@ public class Estudiante {
     }
 }
 	@Override
-    public String toString() {
-        return String.format("%s -|- %s ", correo, documento);
-    }
-
-    public String getEmail() {
-        return correo;
-    }
-		
+	public String toString() {
+	    return String.format("%s -|- %s ", correo, documento);
 	}
+	
+    public void setCorreo(String correo) {
+        this.correo=correo;
+    }
+}
+
 	
 

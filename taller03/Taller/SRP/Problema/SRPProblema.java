@@ -1,16 +1,14 @@
-package paquete;
+package Problema;
 
 public class SRPProblema {
 	 public static void main(String[] args) {
-	       Estudiante estudiante = new estudainte() {{
-	            setDocument("11111111");
-	            setEmail("prueba@institucion.edu.com");
+	       Estudiante estudiante = new Estudiante() {{
+	            setCorreo("prueba@institucion.edu.pais");
 	        }};
 
 	        try {
-
-	            estudiante.save();
-	            System.out.println("Client saved successfully");
+	            estudiante.registrar();
+	            System.out.println("Estudiante registrado correctamente");
 
 	        } catch (RuntimeException e) {
 	            e.printStackTrace();
